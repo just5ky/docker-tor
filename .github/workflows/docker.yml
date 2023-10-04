@@ -40,7 +40,7 @@ jobs:
         uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934
         with:
           images: |
-            justsky/jelly_rpc
+            justsky/tor
       
       - name: Build and push Docker images
         uses: docker/build-push-action@v5
@@ -51,8 +51,8 @@ jobs:
           file: dockerfile.amd64
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/jelly_rpc:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/jelly_rpc:buildcache,mode=max
+          cache-from: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/tor:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKERHUB_USERNAME }}/tor:buildcache,mode=max
 
       - uses: sarisia/actions-status-discord@v1
         if: always()
@@ -63,6 +63,6 @@ jobs:
           title: "CI"
           description: "Build and pushed Docker image"
           color: 0x0000ff
-          url: "https://github.com/just5ky/jelly_rpc"
+          url: "https://github.com/just5ky/docker-tor"
           username: GitHub Actions
           avatar_url: https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/png/github.png

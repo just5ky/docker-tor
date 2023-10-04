@@ -1,10 +1,8 @@
 version: '3.9'
 services:
-  jelly-rpc:
-    image: justsky/jelly_rpc
-    container_name: jelly_rpc
+  tor:
+    image: justsky/tor
+    container_name: tor
     restart: unless-stopped
     ports:
       - 3000:3000
-    volumes:
-      - ./config:/root/.config/jellyfin-rpc
