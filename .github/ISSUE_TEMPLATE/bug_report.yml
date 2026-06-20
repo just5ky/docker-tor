@@ -1,0 +1,66 @@
+name: Bug Report
+description: Report a bug or unexpected behaviour
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before filing, please search [existing issues](https://github.com/just5ky/docker-tor/issues) to avoid duplicates.
+
+  - type: input
+    id: image-version
+    attributes:
+      label: Image version
+      description: Output of `docker inspect justsky/tor:latest | grep -i version`
+      placeholder: "e.g. latest / sha256:abc123"
+    validations:
+      required: true
+
+  - type: input
+    id: host-os
+    attributes:
+      label: Host OS
+      placeholder: "e.g. Ubuntu 24.04, Debian 12, macOS 14"
+    validations:
+      required: true
+
+  - type: input
+    id: docker-version
+    attributes:
+      label: Docker version
+      placeholder: "e.g. 27.0.3"
+    validations:
+      required: true
+
+  - type: textarea
+    id: compose
+    attributes:
+      label: Docker Compose / run command
+      description: Paste your compose file or docker run command (redact secrets)
+      render: yaml
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: What happened? What did you expect?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start container with ...
+        2. Open browser to ...
+        3. See error ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: Output of `docker logs tor`
+      render: shell

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Docker Hub
+    url: https://hub.docker.com/r/justsky/tor
+    about: Check the latest image tags and pull counts
+  - name: LinuxServer baseimage-selkies
+    url: https://github.com/linuxserver/docker-baseimage-selkies
+    about: Issues with the base image itself
+  - name: Tor Project
+    url: https://www.torproject.org/contact/
+    about: Tor Browser bugs or security issues
