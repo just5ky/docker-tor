@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [Unreleased]
 
 ### Changed
+- Removed `tor` system daemon (redundant — Tor Browser ships its own bundled tor binary)
+- Removed `curl` from explicit install (pre-installed in `baseimage-selkies`)
 - Migrated base image from `linuxserver/baseimage-kasmvnc:debianbookworm` to `linuxserver/baseimage-selkies:debianbookworm`
 - Updated `startwm.sh` with Nvidia/Zink GPU detection block required by Selkies
 - Renamed `dockerfile.amd64` to `Dockerfile` (standard naming)

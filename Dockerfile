@@ -19,8 +19,6 @@ ENV TITLE="Tor Browser" \
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-      curl \
-      tor \
       torbrowser-launcher && \
     apt-get clean && \
     rm -rf \
